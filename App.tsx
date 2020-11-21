@@ -1,13 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
+import {ThemeManager} from './components/ThemeManager';
 
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text>Hello world</Text>
-      </SafeAreaView>
+      <ThemeManager>
+        <SafeAreaView>
+          <Text>Hello world</Text>
+        </SafeAreaView>
+      </ThemeManager>
     </>
   );
 };
