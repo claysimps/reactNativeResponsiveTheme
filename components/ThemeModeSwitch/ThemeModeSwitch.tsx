@@ -8,6 +8,7 @@ import {ThemeModeEnum, setThemeMode} from '../../state/themeMode.slice';
 import {
   StyledSwitchWrapper,
   StyledThemeContainer,
+  StyledToggleText,
 } from './ThemeModeSwitch.styles';
 
 export interface CalculatorProps {}
@@ -21,7 +22,7 @@ export const ThemeModeSwitch: FC<CalculatorProps> = () => {
   return (
     <StyledThemeContainer>
       <StyledSwitchWrapper>
-        <Text>Dark mode</Text>
+        <StyledToggleText>Dark mode</StyledToggleText>
         <Switch
           value={themeMode === DARK}
           onValueChange={(value) => {
