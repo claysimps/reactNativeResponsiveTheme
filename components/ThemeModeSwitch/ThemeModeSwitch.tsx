@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Switch, Text} from 'react-native';
+import {Switch} from 'react-native';
 import {useSelector} from 'react-redux';
 
 import {getThemeMode} from '../../selectors/getThemeMode';
@@ -11,11 +11,9 @@ import {
   StyledToggleText,
 } from './ThemeModeSwitch.styles';
 
-export interface CalculatorProps {}
-
 const {LIGHT, DARK} = ThemeModeEnum;
 
-export const ThemeModeSwitch: FC<CalculatorProps> = () => {
+export const ThemeModeSwitch: FC = () => {
   const {themeMode} = useSelector(getThemeMode);
   const dispatch = useAppDispatch();
 
