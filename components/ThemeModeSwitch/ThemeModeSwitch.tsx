@@ -21,7 +21,7 @@ export const ThemeModeSwitch: FC<CalculatorProps> = () => {
   return (
     <StyledThemeContainer>
       <StyledSwitchWrapper>
-        <Text>Dark mode</Text>
+        <StyledToggleText>Dark mode</StyledToggleText>
         <Switch
           value={themeMode === DARK}
           onValueChange={(value) => {
