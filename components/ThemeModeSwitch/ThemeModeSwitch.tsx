@@ -8,6 +8,7 @@ import {ThemeModeEnum, setThemeMode} from '../../state/themeMode.slice';
 import {
   StyledSwitchWrapper,
   StyledThemeContainer,
+  StyledToggleText,
 } from './ThemeModeSwitch.styles';
 
 export interface CalculatorProps {}
