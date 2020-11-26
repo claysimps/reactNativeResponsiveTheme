@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {StatusBar} from 'react-native';
 import styled, {ThemeProvider} from 'styled-components/native';
 import {useSelector} from 'react-redux';
 
-import {CustomThemeProps, light, dark} from '../../constants/Theme';
+import {CustomThemeProps, light, dark} from '../../constants/theme';
 import {getThemeMode} from '../../selectors/getThemeMode';
 import {ThemeModeEnum} from '../../state/themeMode.slice';
 
@@ -16,7 +16,7 @@ const StyledThemeContainer = styled.KeyboardAvoidingView<CustomThemeProps>`
 
 const {DARK, LIGHT} = ThemeModeEnum;
 
-export const ThemeManager: FC = ({children}) => {
+export const ThemeManager = ({children}: {children: React.ReactNode}) => {
   const {themeMode} = useSelector(getThemeMode);
 
   const providedTheme = () => {
