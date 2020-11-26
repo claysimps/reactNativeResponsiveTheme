@@ -3,7 +3,7 @@ import {StatusBar, Appearance} from 'react-native';
 import styled, {ThemeProvider} from 'styled-components/native';
 import {useSelector} from 'react-redux';
 
-import {CustomThemeProps, light, dark} from '../../constants/Theme';
+import {CustomThemeProps, light, dark} from '../../constants/theme';
 import {getThemeMode} from '../../selectors/getThemeMode';
 import {ThemeModeEnum, setThemeMode} from '../../state/themeMode.slice';
 import {useAppDispatch} from '../../utils/useAppDispatch';
