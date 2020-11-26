@@ -1,9 +1,9 @@
-import React, {FC, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {StatusBar, Appearance} from 'react-native';
 import styled, {ThemeProvider} from 'styled-components/native';
 import {useSelector} from 'react-redux';
 
-import {CustomThemeProps, light, dark} from '../../constants/Theme';
+import {CustomThemeProps, light, dark} from '../../constants/theme';
 import {getThemeMode} from '../../selectors/getThemeMode';
 import {ThemeModeEnum, setThemeMode} from '../../state/themeMode.slice';
 import {useAppDispatch} from '../../utils/useAppDispatch';
@@ -17,7 +17,7 @@ const StyledThemeContainer = styled.KeyboardAvoidingView<CustomThemeProps>`
 
 const {DARK, LIGHT} = ThemeModeEnum;
 
-export const ThemeManager: FC = ({children}) => {
+export const ThemeManager = ({children}: {children: React.ReactNode}) => {
   const {themeMode} = useSelector(getThemeMode);
   const dispatch = useAppDispatch();
 
@@ -35,8 +35,7 @@ export const ThemeManager: FC = ({children}) => {
       dispatch(setThemeMode(colorScheme as ThemeModeEnum));
     });
     return () => subscription.remove();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
   return (
     <ThemeProvider theme={providedTheme}>
       <StatusBar
